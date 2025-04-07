@@ -1,0 +1,1 @@
+insert into shelter (id, capacity, location, name) values (1,300, Skopje, Shelter1);
