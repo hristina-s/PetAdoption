@@ -22,4 +22,6 @@ public class Wishlist {
             joinColumns = @JoinColumn(name = "wishlist_id"),
             inverseJoinColumns = @JoinColumn(name = "pet_id"))
     private List<Pet> pets;
+
+    public Wishlist(){}
 }

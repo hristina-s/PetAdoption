@@ -39,7 +39,7 @@ public class Pet {
 
     public Pet() {}
 
-    public Pet(String name, String age, Gender gender, PetType type, byte[] image, Shelter shelter, AdoptionRequest adoptionRequests) {
+    public Pet(String name, String age, Gender gender, PetType type, byte[] image, Shelter shelter) {
         this.name = name;
         this.age = age;
         this.gender = gender;
@@ -47,4 +47,5 @@ public class Pet {
         this.image = image;
         this.shelter = shelter;
     }
+
 }

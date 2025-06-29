@@ -1,5 +1,6 @@
 package com.example.petadoption.model;
 
+import com.example.petadoption.enumeration.RequestStatus;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -13,7 +14,9 @@ public class AdoptionRequest {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String status;
+
+    @Enumerated(EnumType.STRING)
+    private RequestStatus status;
     private Date requestDate;
     private Date approvedDate;
 
@@ -27,11 +30,35 @@ public class AdoptionRequest {
 
     public AdoptionRequest() {}
 
-    public AdoptionRequest(String status, Date requestDate, Date approvedDate, Pet pet, User user) {
+    public AdoptionRequest(RequestStatus status, Date requestDate, Date approvedDate, Pet pet, User user) {
         this.status = status;
         this.requestDate = requestDate;
         this.approvedDate = approvedDate;
         this.user = user;
+        this.pet = pet;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setStatus(RequestStatus status) {
+        this.status = status;
+    }
+
+    public void setRequestDate(Date requestDate) {
+        this.requestDate = requestDate;
+    }
+
+    public void setApprovedDate(Date approvedDate) {
+        this.approvedDate = approvedDate;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public void setPet(Pet pet) {
         this.pet = pet;
     }
 }
